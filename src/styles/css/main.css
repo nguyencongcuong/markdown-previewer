@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/**
+ ** @USE RULES
+ *? Give access to SASS functions, mixins & variables
+ */
+/**
+ ** IMPORTS
+ *? Google Fonts 
+ *? 1: 'Nunito', sans-serif
+ *? 2: 'Open sans', sans-serif
+ */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+/**
+ ** HOW TO USE
+ *? Apply this mixin to the parent element of <iframe>
+ *  <div class="iframe-div">
+ *      <iframe></iframe>
+ *  </div>
+ */
+/**
+ ** RATIO
+ *? Maintain the aspect ratio $x:$y 
+ *? HTML: <div> <div>{content}</div> </div>
+ *? The width property only works with relative units
+ */
+/**
+ ** REMOVE SCROLLBAR
+ *? Remove the scrollbar but keep the scrolling feature
+ *? Aplly this mixin to the html tag or any element you want to remove scrollbar
+ */
+/**
+ ** INITIALIZATION
+ *? 1: Reset
+ *? 2: Typography
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+@media (min-width: 320px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, img, figcaption, table {
+  margin-bottom: 2rem;
+}
+
+.heading-1 {
+  font-size: 1.3333333333rem;
+}
+
+.heading-2 {
+  font-size: 1.6666666667rem;
+}
+
+.heading-3 {
+  font-size: 2rem;
+}
+
+.heading-4 {
+  font-size: 2.3333333333rem;
+}
+
+.heading-5 {
+  font-size: 2.6666666667rem;
+}
+
+.heading-6 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+blockquote {
+  font-style: italic;
+  padding: 0 2rem;
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+pre, code {
+  font-family: monospace;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 7px;
+}
+
+figcaption {
+  font-size: 90%;
+  font-style: italic;
+  text-align: center;
+}
+
+table {
+  border: 2px solid #333333;
+  width: 100%;
+}
+table thead tr th {
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  padding: 15px 10px;
+}
+table tbody tr td {
+  border: 1px solid #cccccc;
+  padding: 5px 10px;
+}
+
+/**
+ ** LAYOUT
+ *
+ */
+.iframe-div {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.iframe-div iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "editor" "previewer";
+  background: #f0eee5;
+  padding: 5vh;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "editor previewer";
+  }
+}
+.main .markdown__editor {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  grid-area: editor;
+  background: #fcfcfc;
+  border-radius: 20px;
+  height: 90vh;
+  overflow-y: scroll;
+  padding: 2rem;
+}
+.main .markdown__editor::-webkit-scrollbar {
+  display: none;
+}
+.main .markdown__editor textarea {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  outline: none;
+}
+.main .markdown__editor textarea::-webkit-scrollbar {
+  display: none;
+}
+.main .markdown__previewer {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  grid-area: previewer;
+  background: white;
+  border-radius: 20px;
+  height: 90vh;
+  overflow-y: scroll;
+  padding: 2rem;
+}
+.main .markdown__previewer::-webkit-scrollbar {
+  display: none;
+}
+
+/**
+ ** COMPONENTS
+ *
+ */
+blockquote {
+  border-left: 5px solid #303030;
+  font-style: normal;
+}
+blockquote::before {
+  content: "❝";
+  font-size: 3rem;
+  font-style: normal;
+}
+
+code {
+  background: #f1f1f1;
+  border-radius: 3px;
+  color: black;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=main.css.map */
