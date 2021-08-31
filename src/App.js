@@ -9,7 +9,7 @@ import Markdown from "./markdown.md"
 function App() {
 
     const [value, setValue] = useState("")
-    
+
     useEffect(() => {
         fetch(Markdown)
         .then(res => res.text())
@@ -24,8 +24,11 @@ function App() {
 
     return (
         <React.Fragment>
-            <main className="main">
-                <Editor value={value} handleChange={(e) => setValue(e.target.value)} />
+            <main className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <Editor
+									value={value}
+									handleChange={(e) => setValue(e.target.value)}
+								/>
                 <Previewer source={value} />
             </main>
         </React.Fragment>

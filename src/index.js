@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import 'highlight.js/styles/atom-one-dark.css'
-import './styles/css/main.css';
+import "./index.css"
 
 import reportWebVitals from './reportWebVitals';
 import App from "./App"

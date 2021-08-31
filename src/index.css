@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-gray-50 }
+
+@layer base {
+	h1 {
+		@apply text-5xl font-bold mb-8;
+	}
+	h2 {
+		@apply text-4xl font-bold mb-8;
+	}
+	h3 {
+		@apply text-3xl font-bold mb-8;
+	}
+	h4 {
+		@apply text-xl font-bold mb-8;
+	}
+	h5 {
+		@apply text-lg font-bold mb-8;
+	}
+	h6 {
+		@apply text-base font-bold mb-8;
+	}
+	p { @apply mb-8 }
+	pre { @apply mb-8 }
+	a { @apply underline }
+	blockquote { @apply mb-4 pl-4 border-l-4 }
+	ul { @apply mb-8 pl-4 list-disc }
+	ol { @apply mb-8 pl-4 list-decimal }
+	img { @apply mb-8 }
+	audio, video { @apply w-full }
+	table { @apply mb-8 w-full }
+	table, th, td { @apply border-2 border-gray-100 border-solid p-2 }
+	hr { @apply mb-8 }
+}

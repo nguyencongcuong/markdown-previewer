@@ -1,15 +1,12 @@
 import React from "react"
-import Badge from "./Badge"
 
 function Editor(props) {
     return (
-        <section className="markdown__editor">
-            <Badge name="Editor" />
-            <form className="w-100 h-100">
+        <section className="markdown__editor relative bg-white p-8">
+            <form className="">
                 <textarea
                     id="editor"
-                    style={{ background: "transparent", border: "none", fontFamily: "monospace", fontSize: "0.8rem", height: "100%" }}
-                    className="w-100"
+                    className="h-screen w-full p-8"
                     value={props.value}
                     onChange={props.handleChange}
                 />

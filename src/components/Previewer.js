@@ -1,6 +1,5 @@
 import React from 'react'
 import marked from "marked"
-import Badge from "./Badge"
 
 function Previewer(props) {
     marked.setOptions({
@@ -16,9 +15,12 @@ function Previewer(props) {
         }
     }
     return (
-        <section className="markdown__previewer">
-            <Badge name="Previewer" />
-            <div id="preview" dangerouslySetInnerHTML={markdown()}></div> 
+        <section className="markdown__previewer bg-white relative p-8">
+            <div
+							id="preview"
+							className="border-none"
+							dangerouslySetInnerHTML={markdown()}>
+						</div>
         </section>
     )
 }
