@@ -1,19 +1,36 @@
 import React from "react"
-import { TextareaAutosize } from '@material-ui/core';
+import { Container, TextareaAutosize } from '@material-ui/core';
+import { makeStyles } from "@material-ui/styles";
+
+const useStyles = makeStyles((theme) => ({
+	markdownEditor: {
+		backgroundColor: "transparent",
+		border: "none",
+		color: "whitesmoke",
+		fontFamily: "monospace",
+		fontSize: theme.typography.fontSize,
+		width: "100%",
+		"&:focus": {
+			outline: "none"
+		}
+	}
+}))
 
 function Editor(props) {
-    return (
-      <section className="markdown__editor relative bg-white p-8">
-				<TextareaAutosize
-					aria-label="empty textarea"
-					placeholder="Empty"
-					id="editor"
-					value={props.value}
-					onChange={props.handleChange}
-					className="w-full font-mono"
-				/>
-      </section>
-    )
+	const classes = useStyles()
+	return (
+		<Container component="section">
+			<TextareaAutosize
+				aria-label="empty textarea"
+				placeholder="Empty"
+				minRows={20}
+				id="editor"
+				value={props.value}
+				onChange={props.handleChange}
+				className={classes.markdownEditor}
+			/>
+		</Container>
+	)
 }
 
 export default Editor

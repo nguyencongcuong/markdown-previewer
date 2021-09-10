@@ -1,41 +1,52 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-	font-family: 'Roboto', sans-serif;
+html {
+	font-size: 18px;
+	line-height: 1.8;
+}
+img {
+	width: 100%;
+	height: auto;
 }
 
-body { @apply bg-gray-50 }
-
-@layer base {
-	h1 {
-		@apply text-5xl font-bold mb-8;
-	}
-	h2 {
-		@apply text-4xl font-bold mb-8;
-	}
-	h3 {
-		@apply text-3xl font-bold mb-8;
-	}
-	h4 {
-		@apply text-xl font-bold mb-8;
-	}
-	h5 {
-		@apply text-lg font-bold mb-8;
-	}
-	h6 {
-		@apply text-base font-bold mb-8;
-	}
-	p { @apply mb-8 }
-	pre { @apply mb-8 }
-	a { @apply underline }
-	blockquote { @apply mb-4 pl-4 border-l-4 }
-	ul { @apply mb-8 pl-4 list-disc }
-	ol { @apply mb-8 pl-4 list-decimal }
-	img { @apply mb-8 }
-	audio, video { @apply w-full }
-	table { @apply mb-8 w-full }
-	table, th, td { @apply border-2 border-gray-100 border-solid p-2 }
-	hr { @apply mb-8 }
+h1 {
+	font-size: 2rem;
+	font-weight: 600;
+}
+h2 {
+	font-size: 1.8rem;
+	font-weight: 600;
+}
+h3 {
+	font-size: 1.6rem;
+	font-weight: 600;
+}
+h4 {
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+h5 {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+h6 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+p {
+	font-size: 1rem;
+}
+a {
+	color: white;
+}
+code {
+	background-color: #f3f3f3;
+	color: #424242;
+}
+table {
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid #ffffff69;
+}
+table th, table td {
+	padding: 10px;
 }

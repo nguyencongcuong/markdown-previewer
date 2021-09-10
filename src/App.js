@@ -6,33 +6,56 @@ import Editor from "./components/Editor"
 import Previewer from "./components/Previewer"
 import Markdown from "./markdown.md"
 
+import { Grid } from "@material-ui/core"
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+	grid: {
+		backgroundColor: theme.palette.primary.dark
+	}
+}))
+
 function App() {
 
-    const [value, setValue] = useState("")
+	const [value, setValue] = useState("")
+	const classes = useStyles();
 
-    useEffect(() => {
-        fetch(Markdown)
-        .then(res => res.text())
-        .then(text => {
-            return setValue(text)
-        });
-    }, [])
+	useEffect(() => {
+		fetch(Markdown)
+			.then(res => res.text())
+			.then(text => {
+				return setValue(text)
+			});
+	}, [])
 
-    useEffect(() => {
-        hljs.highlightAll()
-    })
+	useEffect(() => {
+		hljs.highlightAll()
+	})
 
-    return (
-        <React.Fragment>
-            <main className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                <Editor
-									value={value}
-									handleChange={(e) => setValue(e.target.value)}
-								/>
-                <Previewer source={value} />
-            </main>
-        </React.Fragment>
-    )
+	return (
+		<React.Fragment>
+			<Grid 
+				container
+				className={classes.grid}
+			>
+				<Grid 
+					item
+					sm={4}
+					children={
+						<Editor
+							value={value}
+							handleChange={(e) => setValue(e.target.value)}
+						/>
+					}
+				/>	
+				<Grid 
+					item
+					sm={8}
+					children={<Previewer source={value} />}
+				/>
+			</Grid>
+		</React.Fragment>
+	)
 }
 
 export default App

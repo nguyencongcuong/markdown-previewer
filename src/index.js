@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'highlight.js/styles/atom-one-dark.css'
+import 'highlight.js/styles/atom-one-light.css'
 import "./index.css"
 
 import reportWebVitals from './reportWebVitals';
 import App from "./App"
 
+import { theme } from "./theme"
+import { ThemeProvider } from '@material-ui/styles';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
