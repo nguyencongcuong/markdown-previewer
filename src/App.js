@@ -40,6 +40,7 @@ function App() {
 			>
 				<Grid 
 					item
+					xs={12}
 					sm={4}
 					children={
 						<Editor
@@ -50,6 +51,7 @@ function App() {
 				/>	
 				<Grid 
 					item
+					xs={12}
 					sm={8}
 					children={<Previewer source={value} />}
 				/>
